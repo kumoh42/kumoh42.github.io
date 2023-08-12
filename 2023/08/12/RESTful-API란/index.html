@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Kumoh42 Team">
+    
+    <title>
+        
+            RESTful API란?  |
+        
+        Kumoh42 기술 블로그
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.png","favicon":"/images/logo.png","avatar":"/images/logo.png","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"금오공과대학교 커뮤니티 우리사이,|| 금오사이입니다.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Kumoh42 기술 블로그
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">RESTful API란 ?</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/logo.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Kumoh42 Team</span>
+                            
+                                <span class="author-label">Lv1</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-07-26 22:15:52</span>
+        <span class="mobile">2023-07-26 22:15</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-08-12 17:20:12</span>
+    </span>
+    
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                <body>
+                    <article id="c725b73a-c5b3-4068-8773-94da9737231d" class="page sans">
+                        <header>
+                            <h1 class="page-title">RESTful API란?</h1>
+                            <p class="page-description"></p>
+                        </header>
+                        <div class="page-body">
+                            <p id="bf5e3134-8fca-4404-82bf-047592c796ff" class="">
+                            </p>
+                            <figure id="c234e1aa-56a3-485c-9f42-3953f0e26aa4" class="image"><a
+                                    href="https://keenethics.com/wp-content/uploads/2022/01/rest-api-1.svg"><img
+                                        src="https://keenethics.com/wp-content/uploads/2022/01/rest-api-1.svg" /></a></figure>
+                            <p id="86902d74-e9b2-4ed9-9b47-664f03c906b1" class="">
+                            </p>
+                            <p id="71553e95-6c1f-4b67-a8ff-2d047a2967ac" class="">이번 풋살장 서비스 스프린트를 통해서 저에게 주어진 숙제는 ‘RESTful API’에 대해
+                                알아보기!</p>
+                            <p id="1e481261-6105-477f-a1df-500c39ffebf7" class="">
+                            </p>
+                            <p id="796bd556-1184-4e0e-b985-7bcf4a063273" class="">아무것도 모르는 저는 RESTful API를 하나하나 뜯어보기로 했습니다.</p>
+                            <ol type="1" id="bf74dadc-658b-4ab1-bc2a-c37d6cc5dc6b" class="numbered-list" start="1">
+                                <li><strong>REST란?</strong></li>
+                            </ol>
+                            <ol type="1" id="ac11fcf4-9fbe-4d7d-9fe1-7108cbb4999b" class="numbered-list" start="2">
+                                <li><strong>REST API란?</strong></li>
+                            </ol>
+                            <ol type="1" id="92c3e125-60d0-42a1-a52a-f2047d8f7126" class="numbered-list" start="3">
+                                <li><strong>RESTful API란?</strong></li>
+                            </ol>
+                            <p id="41031d6b-019e-481e-b014-9636a1703870" class="">
+                            </p>
+                            <hr id="b69d52d8-910f-41cf-9e36-a2689c7946d5" />
+                            <h1 id="509b69cc-1152-4ea8-9f64-42b5f02ebfe5" class="">1. REST란?</h1>
+                            <p id="23e42c81-4a61-4866-aaa9-997fedf2e3fa" class="">REST는 Representational State Transfer의 약자로 웹에서 자원의 상태를
+                                주고 받는 것을 의미한다.</p>
+                            <p id="f6663176-abd1-43d8-b34b-5fba08b37223" class="">모든 데이터 구조와 처리 방식은 URL을 통해서 정의된다.</p>
+                            <p id="6dfa1aa5-c218-4826-b846-aadeb3bbacdc" class="">
+                            </p>
+                            <ol type="1" id="9943440a-7867-4919-bfa5-8cd1743fc865" class="numbered-list" start="1">
+                                <li>HTTP URI를 통해 자원을 명시한다.</li>
+                            </ol>
+                            <ol type="1" id="360fc9d3-82ec-4b08-8c37-4fa4677fe4f9" class="numbered-list" start="2">
+                                <li>HTTP Method를 통해 해당 자원에 대한 CRUD Operation을 적용한다.</li>
+                            </ol>
+                            <p id="fc43260e-ae17-4c4c-9d2f-855ee16c70cd" class="">
+                            </p>
+                            <h2 id="9aa7988e-a861-4163-8c38-b148e980e255" class="">CRUD Operation란?</h2>
+                            <ul id="f273f79c-0fa0-41ab-bf24-a102278ececf" class="bulleted-list">
+                                <li style="list-style-type:disc">Create: 데이터 생성 (POST)</li>
+                            </ul>
+                            <ul id="1623d5eb-ecd5-44dc-ae63-35cecb4fce45" class="bulleted-list">
+                                <li style="list-style-type:disc">Read: 데이터 조회 (GET)</li>
+                            </ul>
+                            <ul id="b9055a14-d682-4acc-8f56-25af3d5c1813" class="bulleted-list">
+                                <li style="list-style-type:disc">Update: 데이터 수정 (PUT)</li>
+                            </ul>
+                            <ul id="9e6289dc-8914-4af0-9180-f06a02fe3990" class="bulleted-list">
+                                <li style="list-style-type:disc">Delete: 데이터 삭제 (DELETE)</li>
+                            </ul>
+                            <ul id="d98d0caa-d581-4ec2-abad-e4a780abbaeb" class="bulleted-list">
+                                <li style="list-style-type:disc">HEAD: 네트워크상 데이터의 header 정보 조회 (HEAD)</li>
+                            </ul>
+                            <p id="9ee7d509-babf-4436-84a7-7f24226bcab1" class="">
+                            </p>
+                            <h2 id="692b9355-8142-45d9-8c85-383fb22911fa" class="">REST의 구성 요소</h2>
+                            <ul id="02c1bb38-30b7-49f3-8cc9-3909e1233799" class="bulleted-list">
+                                <li style="list-style-type:disc">자원 (Resource) - HTTP URI</li>
+                            </ul>
+                            <ul id="e54fb1e6-9607-4eee-b735-6c7fb8a9897e" class="bulleted-list">
+                                <li style="list-style-type:disc">행위 (Verb) - HTTP Method</li>
+                            </ul>
+                            <ul id="4d3fafee-6a5b-4215-8e46-7ab3a5ee8a92" class="bulleted-list">
+                                <li style="list-style-type:disc">표현 (Representations)</li>
+                            </ul>
+                            <p id="d0aa5caf-219f-4b69-89be-6bf2cd6da527" class="">
+                            </p>
+                            <h2 id="24ded557-0e50-49c0-a094-02e9e542205b" class="">REST의 특징</h2>
+                            <ul id="95040658-1bd3-418b-939c-b8999ff3339d" class="bulleted-list">
+                                <li style="list-style-type:disc">Uniform Interface (유니폼 인터페이스)<p
+                                        id="5184cf63-59b5-430e-98a3-478687484f98" class="">HTTP 표준에만 따르면, 안드로이드/iOS 플랫폼이든, 제약 없이 모든
+                                        플랫폼에서 사용이 가능하다.</p>
+                                </li>
+                            </ul>
+                            <ul id="e9da2497-6665-4250-b77c-975513962ab6" class="bulleted-list">
+                                <li style="list-style-type:disc">Stateless (무상대성)<p id="4be5d1d3-56d6-4de3-bb9e-c65d84f31af3" class="">
+                                        작업을 위한 상태 정보를 따로 저장하고 관리하지 않는다. 그렇기 때문에 API 서버는 들어오는 요청만 단순히 처리하면 된다.</p>
+                                    <p id="47b92659-46b8-45f6-a4d4-e22ebc094b26" class="">그래서 서비스의 자유도가 높아지고, 서버에 불필요한 정보를 관리하지 않기 떄문에
+                                        구현이 단순해진다.</p>
+                                </li>
+                            </ul>
+                            <ul id="a41a9a15-2a2a-43a1-a230-b3939ec45902" class="bulleted-list">
+                                <li style="list-style-type:disc">Cacheable (캐시 가능)<p id="51003f0b-dc4f-412e-b728-eaa47ca6bb5b" class="">
+                                        HTTP라는 기존 웹 표준을 그대로 사용하기 때문에 웹에서 사용하는 기존의 인프라를 그대로 사용할 수 있다.</p>
+                                    <p id="a468f4df-5a23-4fe2-939f-eec968505626" class="">따라서 HTTP가 가진 캐싱 기능 적용이 가능하다.</p>
+                                </li>
+                            </ul>
+                            <ul id="7cb0c585-eb22-46e9-849d-0e19b2ac5fb1" class="bulleted-list">
+                                <li style="list-style-type:disc">Self-descriptiveness (자체 표현 구조)<p
+                                        id="a3ab4472-8850-4afe-9e55-573456be0357" class="">REST API 메세지만 보고도 이를 쉽게 이해할 수 있는 구조로 설계되어 있다.
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul id="5d9a9e79-0b72-4161-8435-bf3686659c7a" class="bulleted-list">
+                                <li style="list-style-type:disc">Client - Server 구조<p id="d6538cc0-71ee-4e0b-ad93-dc09c667c6c3"
+                                        class="">REST 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트 등을 직접 관리하기 때문에 역할이 확실히 구분된다. 그래서 서버와 클라이언트 간 서로의
+                                        의존성이 줄어들게 된다.</p>
+                                </li>
+                            </ul>
+                            <ul id="3aec29ae-f52e-484a-964b-723ad8d41c1a" class="bulleted-list">
+                                <li style="list-style-type:disc">계층형 구조<p id="d773b28c-eea7-44f2-bcce-265da59e85b0" class="">다층 계층으로 구성이
+                                        가능하기 때문에 보안, 로드 밸런싱, 암호화 계층을 추가하여 구조 간의 유연성을 줄 수 있다.</p>
+                                    <p id="b5459011-7bf9-4cba-9bb0-24b6a465efb1" class="">또, 프록시, 게이트웨이 같은 네트워크 기반의 중간 매체를 사용할 수 있다.</p>
+                                    <p id="9e2a6b77-8771-4491-87da-84151924bf60" class="">
+                                    </p>
+                                </li>
+                            </ul>
+                            <h2 id="0d0468f5-c2f5-472d-b022-21cd0cc88789" class="">REST의 장단점</h2>
+                            <h3 id="efdee6e8-0301-4605-b44e-f7f03d33df1d" class="">장점</h3>
+                            <ul id="63722cbe-cc93-400d-9515-b6876b1dbf3c" class="bulleted-list">
+                                <li style="list-style-type:disc">HTTP 프로토콜의 인프라를 그대로 사용하기 때문에 REST API 사용을 위한 별도의 인프라 구축이 필요 없다.</li>
+                            </ul>
+                            <ul id="a2e2f4d8-937f-48e6-918c-42baca3ce557" class="bulleted-list">
+                                <li style="list-style-type:disc">HTTP 표준 프로토콜을 따르는 모든 플랫폼에서 사용이 가능하다.</li>
+                            </ul>
+                            <ul id="af97abde-705d-456e-8c1b-6184f7587eea" class="bulleted-list">
+                                <li style="list-style-type:disc">Hypermedia API의 기본을 충실히 지키면서 범용성을 보장한다.</li>
+                            </ul>
+                            <ul id="507182fd-f898-405f-a16d-9228100fa233" class="bulleted-list">
+                                <li style="list-style-type:disc">REST API 메세지가 의도하는 바를 명확히 나타내기 때문에 이해가 쉽다.</li>
+                            </ul>
+                            <ul id="0a704014-0df5-4694-b75b-adcd1c3ab620" class="bulleted-list">
+                                <li style="list-style-type:disc">여러 가지 서비스 디자인에서 생길 수 있는 문제를 최소화한다.</li>
+                            </ul>
+                            <ul id="4d9eb431-3983-42cd-8d32-125bcbbfa2e6" class="bulleted-list">
+                                <li style="list-style-type:disc">서버와 클라이언트의 역할을 확실하게 분리한다.</li>
+                            </ul>
+                            <h3 id="f84a3f26-d87c-437a-8852-31eb9834fc62" class="">단점</h3>
+                            <ul id="6968953a-0736-4e72-8277-380a508a0369" class="bulleted-list">
+                                <li style="list-style-type:disc">표준 자체가 존재하지 않아 정의가 필요하다.</li>
+                            </ul>
+                            <ul id="c6255415-b21c-4b67-95d3-aeca7ea625a8" class="bulleted-list">
+                                <li style="list-style-type:disc">사용 가능한 메소드가 4개(CRUD Operation)뿐이다.</li>
+                            </ul>
+                            <ul id="510adbee-8879-47e8-b6a5-9e26093697b5" class="bulleted-list">
+                                <li style="list-style-type:disc">브라우저를 통해 테스트할 일이 많은 서비스라면 쉽게 고칠 수 있는 URL보다 Header의 정보 값을 처리해야 하므로 전문성이
+                                    요구된다.</li>
+                            </ul>
+                            <ul id="4cb6a55f-0546-4311-bb54-4232d11fca22" class="bulleted-list">
+                                <li style="list-style-type:disc">구형 브라우저(익스플로어)에서는 호환이 완벽하게 되지 않는다.</li>
+                            </ul>
+                            <p id="bac93458-3558-426f-aa3d-4b0b817bbd3b" class="">
+                            </p>
+                            <h1 id="7e3b32eb-d2f1-4840-9ec9-1cdcb6007841" class="">2. REST API란?</h1>
+                            <p id="d24fa8cc-1864-434d-9475-542f25254f28" class="">REST API란 REST의 원리를 따르는 API이다.</p>
+                            <p id="022ee927-be07-49dc-a683-9e998ee7873b" class="">
+                            </p>
+                            <h2 id="41760837-1213-4eb4-a3d5-cb799cc3ffde" class="">API란?</h2>
+                            <p id="93f4a580-dc5b-46a8-8726-c9b638ad01f5" class="">데이터와 기능의 집합을 제공하여 컴퓨터 프로그램 간의 상호작용을 촉진하며, 서로 정보 교환이
+                                가능하도록 하는 것이다.</p>
+                            <p id="8bb6d00a-a9ae-4878-b1ac-5123e7576bcd" class="">
+                            </p>
+                            <h2 id="0c0b02fb-ce10-46e6-a868-0f85214bb2ae" class="">REST API의 특징</h2>
+                            <ul id="8f7b94a7-9f31-4bc5-b39c-3e7fc4264b1d" class="bulleted-list">
+                                <li style="list-style-type:disc">REST 기반으로 시스템을 분산하여 확장성과 재사용성을 높여 유지보수 및 운용을 편리하게 할 수 있다.</li>
+                            </ul>
+                            <ul id="372544be-0f94-4ff8-8076-9b398004dabc" class="bulleted-list">
+                                <li style="list-style-type:disc">HTTP 표준을 기반으로 구현하므로, HTTP를 지원하는 프로그램 언어로 클라이언트, 서버를 구현할 수 있다.</li>
+                            </ul>
+                            <p id="795267e6-77ef-4993-9f11-5f14e5bedc52" class="">
+                            </p>
+                            <h2 id="f97b9375-bbed-42c2-965e-24fd1244e3e4" class="">REST API 설계 규칙 예시</h2>
+                            <ol type="1" id="4ca8bf4e-c47e-4c32-a5d2-8412039f2bd3" class="numbered-list" start="1">
+                                <li>URI는 동사보다 명사를 사용하고, 대문자 말고 소문자를 사용한다.<figure class="block-color-gray_background callout"
+                                        style="white-space:pre-wrap;display:flex" id="df0f87d7-9e6b-4638-9d14-6c37840f3dad">
+                                        <div style="font-size:1.5em"><span class="icon">⭕</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/study</div>
+                                    </figure>
+                                    <p id="3f1217b1-59f6-42fd-8f5f-0d852758c187" class="">
+                                    </p>
+                                </li>
+                            </ol>
+                            <ol type="1" id="68d567e4-37b4-47d2-9b08-4316a37318fa" class="numbered-list" start="2">
+                                <li>마지막에 슬래시를 포함하지 않는다.<figure class="block-color-gray_background callout"
+                                        style="white-space:pre-wrap;display:flex" id="d7c94be1-f303-449e-820e-807d579444af">
+                                        <div style="font-size:1.5em"><span class="icon">❌</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/test/</div>
+                                    </figure>
+                                    <p id="e036d9cb-b268-473b-8fab-0baee531af6b" class="">
+                                    </p>
+                                </li>
+                            </ol>
+                            <ol type="1" id="389f6aee-7a7e-4e1f-9d0c-1e7f98d4317d" class="numbered-list" start="3">
+                                <li>언더바(_) 대신에 하이픈(-)을 사용한다.<figure class="block-color-gray_background callout"
+                                        style="white-space:pre-wrap;display:flex" id="d7217cb7-6280-41f3-a379-0524cb760430">
+                                        <div style="font-size:1.5em"><span class="icon">⭕</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/first-test</div>
+                                    </figure>
+                                    <p id="9669f768-5f2c-4640-8fb8-f4d6ab6a862c" class="">
+                                    </p>
+                                </li>
+                            </ol>
+                            <ol type="1" id="aad651d2-e643-4355-856b-095d19138fee" class="numbered-list" start="4">
+                                <li>파일 확장자는 URI에 포함하지 않는다.<figure class="block-color-gray_background callout"
+                                        style="white-space:pre-wrap;display:flex" id="bccea166-567a-469a-8f29-603e3a2fd047">
+                                        <div style="font-size:1.5em"><span class="icon">❌</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/cat.jpg</div>
+                                    </figure>
+                                    <p id="e6c66f15-c814-477b-a858-9cf9a08bfd7c" class="">
+                                    </p>
+                                </li>
+                            </ol>
+                            <ol type="1" id="648ac564-c847-46a1-84a9-0b07b7db6424" class="numbered-list" start="5">
+                                <li>행위를 포함하지 않는다.<figure class="block-color-gray_background callout"
+                                        style="white-space:pre-wrap;display:flex" id="7b8cee93-6c0b-475a-a884-bf192c7b4c78">
+                                        <div style="font-size:1.5em"><span class="icon">❌</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/test-post</div>
+                                    </figure>
+                                    <p id="b0f5201e-d050-44a2-aeb0-3f1d703bd126" class="">
+                                    </p>
+                                </li>
+                            </ol>
+                            <ol type="1" id="1826cfd1-470e-490a-a7d8-0e7a9c8acc88" class="numbered-list" start="6">
+                                <li>경로 중 변하는 부분은 유일한 값으로 대체한다.<p id="64df4cd7-c497-4d9c-aed2-30ffab8145da" class="">→ 특정 id가 2인 경우</p>
+                                    <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+                                        id="2da99609-6be8-4f19-9a2f-ade58d78a633">
+                                        <div style="font-size:1.5em"><span class="icon">⭕</span></div>
+                                        <div style="width:100%"><a href="http://hyunoi">http://hyunoi</a>.com/test/2</div>
+                                    </figure>
+                                </li>
+                            </ol>
+                            <p id="c8f890a3-8c72-45b3-84ff-21a12e40722f" class="">
+                            </p>
+                            <p id="681162f9-81a7-4493-b787-00b765adc031" class="">
+                            </p>
+                            <h1 id="bdfd0dc0-f7ed-4021-9506-413d87e8aee5" class="">3. RESTful이란?</h1>
+                            <p id="5e035af5-df98-499e-ab7e-4293ce3417cf" class="">REST의 원리를 따르는 시스템을 의미한다.</p>
+                            <p id="06e8d11e-3a7c-46df-a17d-a430080d6c97" class="">하지만, REST의 원리를 따랐다고 해서 다 RESTful한 것은 아니다. 위에서 서술한 REST
+                                API 설계 규칙을 올바르게 지킨 시스템을 RESTful하다고 표현할 수 있다.</p>
+                            <p id="2827c254-b77e-4195-b32e-200e0ab0b8ec" class="">
+                            </p>
+                            <p id="f19cdd8f-8f6b-41d9-bb57-cd09131daa92" class="">
+                            </p>
+                        </div>
+                    </article>
+                </body>
+                
+            </div>
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/07/27/index/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">JWT에 대해서 알아보자 !</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Kumoh42 Team</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+        
+    
+</div>
+
+
+
+</body>
+</html>
